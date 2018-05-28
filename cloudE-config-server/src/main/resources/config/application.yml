@@ -8,8 +8,8 @@ spring:
       config:
         server:
           git:
-            uri: https://github.com/vangao1989/mghio.git
-            searchPaths: mghio-config-repo
+            uri: https://github.com/morge007/spring-cloud-example.git
+            searchPaths: cloudE-config-repo
             lable: master
 
 eureka:
