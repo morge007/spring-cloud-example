@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: mghio-config-server
+  cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/vangao1989/mghio.git
+            searchPaths: mghio-config-repo
+            lable: master
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

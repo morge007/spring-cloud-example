@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloudE-admin-server" />
+        <module name="cloudE-common" />
+        <module name="cloudE-config-server" />
+        <module name="cloudE-eureka-server" />
+        <module name="cloudE-gateway-server" />
+        <module name="cloudE-hystrix-dashboard-server" />
+        <module name="cloudE-mapper" />
+        <module name="cloudE-pay-api" />
+        <module name="cloudE-pay-provider" />
+        <module name="cloudE-turbine-server" />
+        <module name="cloudE-ucenter-provider" />
+        <module name="cloudE-zipkin-server" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

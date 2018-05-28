@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      name: mghio-config
+      profile: production
+      label: master

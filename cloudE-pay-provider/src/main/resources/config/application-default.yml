@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: cloud-config
+      profile: local
+      label: master
+

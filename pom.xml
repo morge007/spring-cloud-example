@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cloudE</groupId>
+    <artifactId>cloudE-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>cloudE-parent</name>
+    <description>cloudE-parent</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <cloudE-mapper-version>1.0.0</cloudE-mapper-version>
+        <cloudE-common-version>1.0.0</cloudE-common-version>
+        <cloudE-pay-api-version>1.0.0</cloudE-pay-api-version>
+
+        <docker.image.prefix>vangao1989</docker.image.prefix>
+    </properties>
+
+    <modules>
+        <module>cloudE-common</module>
+        <module>cloudE-mapper</module>
+        <module>cloudE-eureka-server</module>
+        <module>cloudE-admin-server</module>
+        <module>cloudE-config-server</module>
+        <module>cloudE-hystrix-dashboard-server</module>
+        <module>cloudE-zipkin-server</module>
+        <module>cloudE-gateway-server</module>
+        <module>cloudE-turbine-server</module>
+        <module>cloudE-pay-api</module>
+        <module>cloudE-pay-provider</module>
+        <module>cloudE-ucenter-provider</module>
+    </modules>
+
+    <dependencies>
+        <!-- The client -->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient</artifactId>
+            <version>0.0.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_spring_boot</artifactId>
+            <version>0.0.24</version>
+        </dependency>
+
+        <!-- Hotspot JVM metrics-->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_hotspot</artifactId>
+            <version>0.0.24</version>
+        </dependency>
+
+        <!-- Exposition servlet-->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_servlet</artifactId>
+            <version>0.0.24</version>
+        </dependency>
+
+        <!-- Pushgateway exposition-->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_pushgateway</artifactId>
+            <version>0.0.24</version>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.20</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-parent</artifactId>
+                <version>Edgware.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.11</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.name}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+        <defaultGoal>compile</defaultGoal>
+    </build>
+
+</project>
