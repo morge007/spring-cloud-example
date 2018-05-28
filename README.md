@@ -6,20 +6,20 @@
 ### 组织结构
 
 ``` lua
-cloudE
-├── cloudE-eureka-server -- 服务发现
-├── cloudE-config-server -- 分布式配置中心
-├── cloudE-config-repo -- 配置文件
-├── cloudE-admin-server -- 服务监控
-├── cloudE-gateway-server -- zuul网关
-├── cloudE-hystrix-dashboard-server -- hystrix仪表盘
-├── cloudE-turbine-server -- hystrix仪表盘聚合服务
-├── cloudE-zipkin-server -- 链路监控
-├── cloudE-pay-api -- 支付服务api，提供feign接口
-├── cloudE-pay-provider -- 支付服务
-├── cloudE-ucenter-provider -- 用户中心
-├── cloudE-mapper -- mybatis生成模块
-├── cloudE-common 公共模块、工具类等
+mghio
+├── mghio-eureka-server -- 服务发现
+├── mghio-config-server -- 分布式配置中心
+├── mghio-config-repo -- 配置文件
+├── mghio-admin-server -- 服务监控
+├── mghio-gateway-server -- zuul网关
+├── mghio-hystrix-dashboard-server -- hystrix仪表盘
+├── mghio-turbine-server -- hystrix仪表盘聚合服务
+├── mghio-zipkin-server -- 链路监控
+├── mghio-pay-api -- 支付服务api，提供feign接口
+├── mghio-pay-provider -- 支付服务
+├── mghio-ucenter-provider -- 用户中心
+├── mghio-mapper -- mybatis生成模块
+├── mghio-common 公共模块、工具类等
 ```
 
 ### 技术选型
@@ -45,19 +45,19 @@ prometheus | 时间序列数据库 | [https://prometheus.io/](https://prometheus
 
 ### 模块介绍
 
-> cloudE-common
+> mghio-common
 
 包含了公共模块，以及工具类等。
 
-> cloudE-pay-api
+> mghio-pay-api
 
 支付服务api包，以feign的形式暴露支付接口
 
-> cloudE-pay-provider
+> mghio-pay-provider
 
 提供支付服务
 
-> cloudE-ucenter-provider
+> mghio-ucenter-provider
 
 用户中心，通过feign调用支付服务
 
@@ -81,13 +81,13 @@ prometheus | 时间序列数据库 | [https://prometheus.io/](https://prometheus
 
 - 1、执行spring boot main方法
 
-- 2、执行maven打包命令 mvn clean install -Dmaven.test.skip=true ,jar包会被打到target目录下，进入该目录，执行 java -jar cloudE-xxxxx-xxxx.jar --spring.profiles.active=dev
+- 2、执行maven打包命令 mvn clean install -Dmaven.test.skip=true ,jar包会被打到target目录下，进入该目录，执行 java -jar mghio-xxxxx-xxxx.jar --spring.profiles.active=dev
 
 - 3、构建docker镜像（mvn package docker:build），然后执行docker run xxxxx/xxxxx
 
 > 启动顺序
 
-- 优先启动cloudE-eureka-server,cloudE-config-server。其他服务顺序随意
+- 优先启动cloudE-eureka-server,mghio-config-server。其他服务顺序随意
 
 
 ### 服务监控

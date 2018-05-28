@@ -9,7 +9,7 @@ spring:
         server:
           git:
             uri: https://github.com/morge007/spring-cloud-example.git
-            searchPaths: cloudE-config-repo
+            searchPaths: mghio-config-repo
             lable: master
 
 eureka:

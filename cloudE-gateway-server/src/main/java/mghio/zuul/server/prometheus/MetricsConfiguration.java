@@ -1,4 +1,4 @@
-package cloudE.zuul.server.prometheus;
+package mghio.zuul.server.prometheus;
 
 import io.prometheus.client.exporter.MetricsServlet;
 import io.prometheus.client.hotspot.DefaultExports;

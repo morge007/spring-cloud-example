@@ -1,4 +1,4 @@
-package cloudE.zuul.server.filter;
+package mghio.zuul.server.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

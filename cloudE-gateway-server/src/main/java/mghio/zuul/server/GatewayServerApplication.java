@@ -1,7 +1,7 @@
-package cloudE.zuul.server;
+package mghio.zuul.server;
 
-import cloudE.zuul.server.filter.AccessFilter;
 import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
+import mghio.zuul.server.filter.AccessFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;

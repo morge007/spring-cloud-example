@@ -6,7 +6,7 @@
     <artifactId>cloudE-mapper</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>cloudE-mapper</name>
+    <name>mghio-mapper</name>
 
     <dependencies>
         <dependency>

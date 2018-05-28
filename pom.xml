@@ -6,8 +6,8 @@
     <artifactId>cloudE-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>cloudE-parent</name>
-    <description>cloudE-parent</description>
+    <name>mghio-parent</name>
+    <description>mghio-parent</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
