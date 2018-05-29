@@ -133,8 +133,7 @@ public class RedisService {
 
     public void hSet(String key, String field, String value) {
         redisTemplate.execute((RedisCallback) connection -> {
-            Boolean isSuccess = connection.hSet(key.getBytes(), field.getBytes(), value.getBytes());
-            return isSuccess;
+            return connection.hSet(key.getBytes(), field.getBytes(), value.getBytes());
         });
     }
 
@@ -159,7 +158,6 @@ public class RedisService {
         });
     }
 
-    @SuppressWarnings(value = "unchecked")
     public Map<String, String> hGetAll(String key) {
         return (Map<String, String>) redisTemplate.execute((RedisCallback) connection -> {
             if (exists(key)) {

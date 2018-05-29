@@ -7,6 +7,7 @@
       <w>entrypoint</w>
       <w>frolvlad</w>
       <w>hystrix</w>
+      <w>mghio</w>
       <w>mixedmapper</w>
       <w>myfolder</w>
       <w>myproject</w>
